@@ -1,5 +1,5 @@
-import NextAuth from "next-auth"
-import GoogleProvider from "next-auth/providers/google"
+import NextAuth from "next-auth";
+import GoogleProvider from "next-auth/providers/google";
 
 export default NextAuth({
   // Configure one or more authentication providers
@@ -12,10 +12,14 @@ export default NextAuth({
   ],
   pages:  {
         signIn: "/auth/signin",
-        signOut: '/auth/signout',
-        error: '/auth/error', // Error code passed in query string as ?error=
-        verifyRequest: '/auth/verify-request', // (used for check email message)
-        newUser: '/auth/new-user' // New users will be directed here on first sign in (leave the property out if not of interest)
-  }
-  }
-)
+  },
+  callbacks: {
+    async session({ session, token, user }) {
+      // session.user.username = sesssion.user.name.split("").join("").toLocaleLowerCase();
+      // Send properties to the client, like an access_token from a provider.
+      session.user.uid = token.sub
+      return session
+    }
+  },
+  
+})
