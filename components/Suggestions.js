@@ -1,19 +1,19 @@
 import { useEffect, useState} from "react"
-import faker from "faker"
+// import faker from "faker"
 
 function Suggestions() {
     const [suggestions, setSuggestions] = useState([]);
 
-    useEffect(() => {
-        const suggestions = [...Array(5)].map((_, i) => (
-            {
-                ...faker.helpers.contextualCard(),
-                id: i,
-            }
-        ))
-        setSuggestions(suggestions)
-        console.log(suggestions)
-    }, [])
+    // useEffect(() => {
+    //     const suggestions = [...Array(5)].map((_, i) => (
+    //         {
+    //             ...faker.helpers.contextualCard(),
+    //             id: i,
+    //         }
+    //     ))
+    //     setSuggestions(suggestions)
+    //     console.log(suggestions)
+    // }, [])
 
     return (
         <div className="mt-4 ml-10">
