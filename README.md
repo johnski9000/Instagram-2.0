@@ -1,4 +1,4 @@
-The Instagram Clone is partially incomplete
+The Instagram Clone is partially incomplete, issue with autho0 sign in page
 
 
 
