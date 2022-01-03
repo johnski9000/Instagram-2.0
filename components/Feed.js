@@ -4,6 +4,7 @@ import MiniProfile from "./MiniProfile"
 import Suggestions from "./Suggestions"
 import {useSession} from "next-auth/react"
 
+
 function Feed() {
     const {data: session} = useSession();
     
